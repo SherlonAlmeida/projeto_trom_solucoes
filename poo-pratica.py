@@ -2,15 +2,18 @@ class Cliente:
     def __init__(self):
         self.nome = None
         self.telefone = None
+        self.cpf = None
     
     def cadastro(self):
         print("---- Cadastro de Cliente ----")
         self.nome = input("Digite o nome: ")
         self.telefone = input("Digite o telefone: ")
+        self.cpf = input("Digite o CPF: ")
     
     def mostra_informacoes(self):
         print(f"Nome: {self.nome}")
         print(f"Telefone: {self.telefone}")
+        print(f"CPF: {self.cpf}")
 
 meus_clientes = [] #Armazenar os clientes
 
