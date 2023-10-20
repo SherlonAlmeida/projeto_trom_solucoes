@@ -1,4 +1,6 @@
 import sqlite3
+from gerenciar_clientes import * #Importa as funções do arquivo gerenciar_clientes.py
+
 conexao = sqlite3.connect("bdTrom.sqlite3")
 cursor = conexao.cursor()
 ###################################################
@@ -11,14 +13,9 @@ while True:
         print("Programa finalizado!")
         break
     elif opcao == 1: #Cadastro de clientes
-        nome = input("Digite o seu nome: ")
-        telefone = input("Digite o seu telefone: ")
-        cpf = input("Digite o seu CPF: ")
-        comando_sql = """INSERT INTO Clientes (nome, telefone, cpf) VALUES (?, ?, ?);"""
-        valores = [nome, telefone, cpf]
-        cursor.execute(comando_sql, valores)
-        conexao.commit()
+        cadastrar_clientes(conexao)
     elif opcao == 2: #Mostrar clientes
+        #TAREFA FÁBIO: adaptar este trecho de código em uma função em outro arquivo.
         comando_sql = """SELECT * FROM Clientes;"""
         cursor.execute(comando_sql)
         dados_recuperados = cursor.fetchall()
