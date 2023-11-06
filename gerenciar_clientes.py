@@ -15,3 +15,15 @@ def mostrar_clientes(conn):
     dados_recuperados = cursor.fetchall()
     for dado in dados_recuperados:
         print(dado)
+
+def atualizar_clientes(conn): #UPDATE
+    pass
+
+def deletar_clientes(conn):
+    cursor = conn.cursor()
+    mostrar_clientes(conn) #Mostra clientes
+    id = int(input("Digite o ID do cliente a ser excluido: "))
+    comando_sql = """DELETE FROM Clientes WHERE id = ?"""
+    valores = [id]
+    cursor.execute(comando_sql, valores)
+    conn.commit()
