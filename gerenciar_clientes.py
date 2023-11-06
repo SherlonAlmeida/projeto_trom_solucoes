@@ -9,5 +9,9 @@ def cadastrar_clientes(conn):
     conn.commit()
 
 def mostrar_clientes(conn):
-    #Você vai colocar o seu código aqui
-    pass
+    cursor = conn.cursor()
+    comando_sql = """SELECT * FROM Clientes;"""
+    cursor.execute(comando_sql)
+    dados_recuperados = cursor.fetchall()
+    for dado in dados_recuperados:
+        print(dado)

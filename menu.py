@@ -15,12 +15,7 @@ while True:
     elif opcao == 1: #Cadastro de clientes
         cadastrar_clientes(conexao)
     elif opcao == 2: #Mostrar clientes
-        #TAREFA FÁBIO: adaptar este trecho de código em uma função em outro arquivo.
-        comando_sql = """SELECT * FROM Clientes;"""
-        cursor.execute(comando_sql)
-        dados_recuperados = cursor.fetchall()
-        for dado in dados_recuperados:
-            print(dado)
+        mostrar_clientes(conexao)
     else:
         print("Opção inválida!")
 
