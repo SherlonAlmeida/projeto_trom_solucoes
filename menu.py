@@ -7,7 +7,7 @@ cursor = conexao.cursor()
 
 print("---- Seja bem-vind@ à TROM SOLUÇÕES ----")
 while True:
-    print("\nOpções: 1) Cadastrar cliente, 2) Mostrar clientes, 3) Deletar clientes, 0) Sair")
+    print("\nOpções: 1) Cadastrar cliente, 2) Mostrar clientes, 3) Deletar clientes, 4)Atualizar clientes, 0) Sair")
     opcao = int(input("Digite a opção desejada: "))
     if opcao == 0: #Finaliza o programa
         print("Programa finalizado!")
@@ -18,6 +18,8 @@ while True:
         mostrar_clientes(conexao)
     elif opcao == 3: #Deletar clientes
         deletar_clientes(conexao)
+    elif opcao == 4: #Atualizar clientes
+        atualizar_clientes(conexao)      
     else:
         print("Opção inválida!")
 

@@ -17,7 +17,16 @@ def mostrar_clientes(conn):
         print(dado)
 
 def atualizar_clientes(conn): #UPDATE
-    pass
+    cursor = conn.cursor()
+    mostrar_clientes(conn)
+    id = int(input("Digite o ID do cliente a ser atualizado: "))
+    nome = input("Digite o nome: ")
+    telefone = input("Digite o telefone: ")
+    cpf = input("Digite o CPF: ")
+    comando_sql = """UPDATE Clientes SET nome = ?, telefone = ?, cpf = ? where id = ?"""
+    valores = [nome, telefone, cpf, id]
+    cursor.execute(comando_sql, valores)
+    conn.commit()
 
 def deletar_clientes(conn):
     cursor = conn.cursor()
