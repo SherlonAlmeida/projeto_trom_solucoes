@@ -7,6 +7,7 @@ def cadastrar_clientes(conn):
     valores = [nome, telefone, cpf]
     cursor.execute(comando_sql, valores)
     conn.commit()
+    print("CLIENTE CADASTRADO COM SUCESSO!")
 
 def mostrar_clientes(conn):
     cursor = conn.cursor()
@@ -27,6 +28,7 @@ def atualizar_clientes(conn): #UPDATE
     valores = [nome, telefone, cpf, id]
     cursor.execute(comando_sql, valores)
     conn.commit()
+    print("CLIENTE ATUALIZADO COM SUCESSO!")
 
 def deletar_clientes(conn):
     cursor = conn.cursor()
@@ -36,3 +38,4 @@ def deletar_clientes(conn):
     valores = [id]
     cursor.execute(comando_sql, valores)
     conn.commit()
+    print("CLIENTE DELETADO COM SUCESSO!")
