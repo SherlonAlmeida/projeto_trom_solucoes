@@ -75,4 +75,68 @@ while True:
         break"""
 
 #Iteradores (baseados em Classes)
+"""class Contagem:
+    def __init__(self, inicio, fim):
+        self.fim = fim
+        self.atual = inicio - 1
+    
+    def contar_todos(self):
+        print("Contagem: ", end="")
+        for i in range(self.inicio, self.fim+1, 1):
+            print(i, end=" ")
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.atual >= self.fim:
+            print("O limite da contagem foi excedido!")
+            raise StopIteration
+        
+        self.atual += 1
+        return self.atual
 
+contador = Contagem(1, 5)
+#contador.contar_todos()
+#Iterador (Um a um por NEXT())
+for i in range(10):
+    try:
+        print(contador.__next__())
+    except StopIteration:
+        print("Limite Excedido!")
+        break"""
+
+#Iteradores (baseados em Classes)
+"""class IteraPessoas:
+    def __init__(self, pessoas):
+        self.pessoas = pessoas
+        self.indice  = 0
+        self.tamanho = len(pessoas)
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.indice > self.tamanho-1:
+            print("O limite da contagem foi excedido!")
+            raise StopIteration
+        
+        pessoa_atual = self.pessoas[self.indice]
+        self.indice += 1
+        return pessoa_atual
+
+pessoas = [
+    {"Nome": "Sherlon", "Idade": 28},
+    {"Nome": "Fabio", "Idade": 28},
+    {"Nome": "Maria", "Idade": 18},
+    {"Nome": "João", "Idade": 45},
+    {"Nome": "Lucas", "Idade": 32}
+]
+
+dadosIter = IteraPessoas(pessoas)
+for i in range(10):
+    try:
+        print(dadosIter.__next__())
+    except StopIteration:
+        print("Limite Excedido!")
+        break"""
